@@ -1,8 +1,8 @@
 # Arquivos locais
 *.env
-data/enderecos_validos.csv
-data/enderecos_invalidos.csv
-data/Lista_ceps.csv
+data/*
+!data/.gitkeep
+
 
 # Ambientes virtuais
 .venv/
