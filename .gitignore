@@ -1,6 +1,8 @@
 # Arquivos locais
 *.env
-data/ceps_validos.csv
+data/enderecos_validos.csv
+data/enderecos_invalidos.csv
+data/Lista_ceps.csv
 
 # Ambientes virtuais
 .venv/
