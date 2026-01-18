@@ -1,0 +1,10 @@
+# Arquivos locais
+*.env
+data/ceps_validos.csv
+
+# Ambientes virtuais
+.venv/
+venv/
+
+# Cache
+__pycache__/

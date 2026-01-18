@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+import os
 
 endereco_retorno = []
 endereco_erro = []
@@ -24,11 +25,10 @@ for ceps in cep['cep']:
               
 
     except:
-         print(response)
+         print(f'O cep {ceps} é invalido')
 
 endereco_validos = pd.DataFrame(endereco_retorno)
-endereco_validos.to_csv('data/enderecos_validos.csv', mode='a', index=False, encoding='utf8')
+endereco_validos.to_csv('data/enderecos_validos.csv', mode='a', index=False, header= not os.path.exists('data/enderecos_validos.csv'), encoding='utf8')
 
 endereco_invalidos = pd.DataFrame(endereco_erro)
-endereco_invalidos.to_csv('data/enderecos_invalidos.csv', mode='a', index=False, encoding='utf8')
-
+endereco_invalidos.to_csv('data/enderecos_invalidos.csv', mode='a', index=False, header= not os.path.exists('data/enderecos_invalidos.csv'), encoding='utf8')
