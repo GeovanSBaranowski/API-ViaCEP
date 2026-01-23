@@ -1,0 +1,7 @@
+API:
+  BASE_URL:  "https://viacep.com.br/ws"
+
+DATA:
+  INPUT_DATA:  "data/cep_raw/ceps_raw.csv"
+  OUTPUT_DATA_VALID:  "data/cep_processado/cep_valido.csv"
+  OUTPUT_DATA_INVALID:  "data/cep_processado/cep_invalido.csv"
