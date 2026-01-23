@@ -12,5 +12,6 @@ def load_ceps(data, path):
     #se existir, armazena no mesmo
     os.makedirs(os.path.dirname(path), exist_ok= True)
 
+    #cria o dataframe com as informacoes retornadas da pipeline e o transforma em um .csv
     df_ceps = pd.DataFrame(data)
     df_ceps.to_csv(path, index=False, encoding='utf-8')

@@ -24,13 +24,16 @@ def run():
      for cep in df_ceps:
           resultado_cep = transforma_cep(cep, base_url)
 
-          if resultado_cep:
+     #caso o resultado seja 200 e possua valor diferente de 'erro' o item é armazenado na lista 'endereco_ok'
+     #caso o retorno da funcao 'retorna_cep' seja diferente de 200 ou valor igual a 'erro' é armazenado na lista 'endereco_erro'
+          if resultado_cep: 
                endereco_ok.append(resultado_cep)
           else:
                endereco_erro.append({'cep': cep})
 
-     load_ceps(endereco_ok, output_valid)
-     load_ceps(endereco_erro, output_invalid)
+     load_ceps(endereco_ok, output_valid) #cria o .csv com enderecos validos
+     load_ceps(endereco_erro, output_invalid) #cria o .csv com enderecos invalidos
 
+#chama a funcao run apenas quando executada a partir deste arquivo
 if __name__ == "__main__":
      run()
